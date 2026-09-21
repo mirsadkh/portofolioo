@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1739">
+<meta name="description" content="Portofolio Muhammad Irsad Khoiruddin — Management, Accounting, Finance, Excel, Data Analysis, Quality Control and Operations.">
+<title>Muhammad Irsad Khoiruddin — Portfolio</title>
+<style>
+:root{
+  --bg:#f6f9fc; --surface:rgba(255,255,255,.82); --surface-strong:#fff; --ink:#0b1739; --muted:#60708b;
+  --line:rgba(11,23,57,.10); --primary:#1677ff; --cyan:#12bfd3; --gold:#f4a726; --green:#14ad82; --rose:#e86488;
+  --shadow:0 24px 70px rgba(26,57,97,.12); --shadow-sm:0 12px 30px rgba(26,57,97,.08);
+  --radius:24px; --header:68px;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5;overflow-x:hidden}
+body.modal-open{overflow:hidden}
+body.dark{
+  --bg:#07101f; --surface:rgba(14,25,45,.78); --surface-strong:#0d1830; --ink:#eef6ff; --muted:#9fb0ca;
+  --line:rgba(255,255,255,.10); --shadow:0 24px 70px rgba(0,0,0,.28); --shadow-sm:0 12px 30px rgba(0,0,0,.18);
+}
+::selection{background:rgba(22,119,255,.22)}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+img{max-width:100%}
+.container{width:min(1180px,calc(100% - 36px));margin-inline:auto}
+.progress{position:fixed;left:0;top:0;width:0;height:4px;z-index:1000;background:linear-gradient(90deg,#1677ff,#12bfd3,#f4a726,#e86488)}
+.skip{position:fixed;left:14px;top:-100px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;z-index:1200}.skip:focus{top:14px}
+
+.bg{position:fixed;inset:0;z-index:-10;overflow:hidden;pointer-events:none;background:
+radial-gradient(circle at 7% 10%,rgba(18,191,211,.20),transparent 24%),
+radial-gradient(circle at 95% 15%,rgba(232,100,136,.16),transparent 24%),
+radial-gradient(circle at 14% 88%,rgba(244,167,38,.14),transparent 26%),
+radial-gradient(circle at 82% 72%,rgba(22,119,255,.16),transparent 27%),
+linear-gradient(180deg,var(--bg),var(--bg))}
+.bg:before,.bg:after{content:"";position:absolute;border-radius:50%;filter:blur(18px);opacity:.6}
+.bg:before{width:420px;height:420px;left:-110px;top:28%;background:radial-gradient(circle,rgba(18,191,211,.18),transparent 70%);animation:float 12s ease-in-out infinite}
+.bg:after{width:480px;height:480px;right:-150px;bottom:5%;background:radial-gradient(circle,rgba(232,100,136,.13),transparent 70%);animation:float2 15s ease-in-out infinite}
+.dotfield{position:fixed;inset:0;z-index:-9;pointer-events:none;background-image:radial-gradient(rgba(11,23,57,.11) .7px,transparent .7px);background-size:18px 18px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.22),transparent 80%)}
+@keyframes float{50%{transform:translate3d(30px,-32px,0) scale(1.08)}}@keyframes float2{50%{transform:translate3d(-38px,-20px,0) scale(1.05)}}
+
+.nav-wrap{position:sticky;top:12px;z-index:900;padding-top:12px}
+.nav{height:var(--header);display:flex;align-items:center;gap:18px;justify-content:space-between;padding:0 10px 0 14px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:22px;box-shadow:var(--shadow-sm)}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;font-weight:900;letter-spacing:-.03em}
+.brand-mark{width:38px;height:38px;display:grid;place-items:center;color:#fff;border-radius:13px;background:linear-gradient(135deg,#1677ff,#12bfd3);box-shadow:0 10px 22px rgba(22,119,255,.25);font-size:13px}
+.brand span:last-child{white-space:nowrap}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.03em}
+.navlinks{display:flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:rgba(127,147,176,.07);border:1px solid var(--line)}
+.navlinks a{padding:9px 12px;border-radius:999px;font-size:12px;font-weight:850;color:var(--muted);transition:.22s ease}
+.navlinks a:hover,.navlinks a.active{background:var(--surface-strong);color:var(--ink);box-shadow:0 8px 18px rgba(16,44,82,.09)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:var(--surface-strong);color:var(--ink);cursor:pointer;transition:.22s;display:grid;place-items:center}
+.icon-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.menu-btn{display:none}
+
+main{padding-bottom:40px}
+.hero{min-height:calc(100vh - 84px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:58px;padding:70px 0 82px}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;font-size:10px;letter-spacing:.16em;font-weight:950;color:var(--primary)}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 7px rgba(244,167,38,.12)}
+.hero h1{font-size:clamp(50px,7vw,90px);letter-spacing:-.075em;line-height:.95;margin:18px 0 18px;max-width:760px}
+.gradient-text{background:linear-gradient(100deg,#1677ff,#12bfd3 50%,#e86488);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-lede{color:var(--muted);font-size:17px;line-height:1.75;max-width:680px;margin:0 0 26px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 15px;border-radius:14px;border:1px solid var(--line);background:var(--surface-strong);color:var(--ink);font-size:12px;font-weight:900;cursor:pointer;transition:.22s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.btn.primary{color:#fff;border-color:transparent;background:linear-gradient(135deg,#0b1739,#173d83 58%,#1677ff);box-shadow:0 14px 30px rgba(17,49,102,.18)}
+.btn.ghost{background:transparent}
+.hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stat{min-width:108px;padding-right:18px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}.stat strong{display:block;font-size:22px;letter-spacing:-.04em}.stat span{font-size:10px;color:var(--muted);font-weight:800}
+.hero-visual{position:relative;display:flex;justify-content:flex-end;align-items:center}
+.photo-card{position:relative;padding:12px;border-radius:30px;width:min(100%,560px);max-width:560px;margin-left:auto;background:linear-gradient(145deg,var(--surface-strong),color-mix(in srgb,var(--surface-strong) 72%,#dcecff));border:1px solid var(--line);box-shadow:var(--shadow);transform-style:preserve-3d;transition:transform .15s ease}
+.photo-card:before{content:"";position:absolute;inset:18px -20px -28px 20px;border-radius:28px;background:linear-gradient(135deg,rgba(22,119,255,.18),rgba(18,191,211,.13),rgba(244,167,38,.12));z-index:-1}
+.profile{display:block;width:100%;height:620px;object-fit:cover;object-position:center 22%;border-radius:22px}
+.floating-card{position:absolute;left:-22px;bottom:26px;padding:14px 15px;border-radius:17px;background:#0a1430;color:#fff;box-shadow:0 20px 40px rgba(8,18,41,.22);min-width:180px;animation:floatCard 5s ease-in-out infinite}
+.floating-card small{display:block;color:#b8c8e5;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.14em}
+.floating-card strong{display:block;margin-top:4px;font-size:15px}
+.floating-card span{display:block;margin-top:4px;color:#ffd86b;font-size:10px;font-weight:850}
+.mini-orbit{position:absolute;right:-18px;top:-14px;width:76px;height:76px;border:1px dashed rgba(22,119,255,.45);border-radius:50%;animation:spin 15s linear infinite}
+.mini-orbit:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#12bfd3;top:7px;left:12px;box-shadow:0 0 0 7px rgba(18,191,211,.12)}
+@keyframes floatCard{50%{transform:translateY(-8px)}}@keyframes spin{to{transform:rotate(360deg)}}
+
+.section{padding:92px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:26px}.section-title{font-size:clamp(34px,4.2vw,56px);line-height:1;letter-spacing:-.06em;margin:7px 0 0}.section-copy{max-width:530px;margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}.filter{border:1px solid var(--line);background:var(--surface-strong);color:var(--muted);padding:8px 11px;border-radius:999px;font-size:10px;font-weight:900;cursor:pointer;transition:.2s}.filter:hover,.filter.active{color:var(--ink);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm);border-radius:22px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(22,119,255,.18)}
+.project{position:relative;display:flex;flex-direction:column;min-height:100%}
+.project[data-color="green"]{--accent:#14ad82}.project[data-color="orange"]{--accent:#f4a726}.project[data-color="blue"]{--accent:#1677ff}.project[data-color="cyan"]{--accent:#12bfd3}.project[data-color="rose"]{--accent:#e86488}.project[data-color="navy"]{--accent:#203c7d}
+.project-media{position:relative;overflow:hidden;background:#e9f0f7;border-bottom:1px solid var(--line)}
+.project-media img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;transition:transform .45s ease}
+.project:hover .project-media img{transform:scale(1.03)}
+.project-top{position:absolute;left:12px;top:12px;right:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.badge{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.90);color:var(--ink);font-size:9px;font-weight:950;box-shadow:0 8px 16px rgba(16,44,82,.10)}
+.project-open{width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.65);background:rgba(7,16,31,.82);color:#fff;display:grid;place-items:center;cursor:pointer}
+.project-body{padding:17px 17px 13px}.project-body h3{font-size:20px;line-height:1.05;letter-spacing:-.04em;margin:0 0 7px}.project-body p{font-size:12px;color:var(--muted);line-height:1.65;margin:0;min-height:78px}
+.metric-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.metric{padding:7px 9px;border-radius:11px;background:rgba(22,119,255,.065);border:1px solid rgba(22,119,255,.08);font-size:9px;font-weight:900;color:var(--ink)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding:0 17px 16px}.chip{padding:6px 8px;border-radius:999px;border:1px solid var(--line);font-size:9px;color:var(--muted);font-weight:800}
+.project-footer{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:0 17px 17px}.link-btn{font-size:10px;font-weight:950;color:var(--accent)}.link-btn.muted{color:var(--muted)}
+.is-hidden{display:none!important}
+
+.certs{grid-template-columns:repeat(3,1fr)}.cert{cursor:pointer}.cert-thumb{position:relative;overflow:hidden;background:#edf2f8;border-bottom:1px solid var(--line)}.cert-thumb img{display:block;width:100%;aspect-ratio:1.45/1;object-fit:cover;transition:transform .4s}.cert:hover .cert-thumb img{transform:scale(1.025)}.cert-body{padding:15px}.cert-date{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);font-weight:950}.cert h3{font-size:15px;line-height:1.2;letter-spacing:-.03em;margin:6px 0 0}
+
+.timeline{position:relative;margin-top:12px}.timeline:before{content:"";position:absolute;left:11px;top:4px;bottom:4px;width:1px;background:var(--line)}
+.item{position:relative;display:grid;grid-template-columns:28px 1fr;gap:14px;margin-bottom:18px}.dot{width:23px;height:23px;border-radius:50%;border:6px solid var(--bg);background:linear-gradient(135deg,#1677ff,#12bfd3);box-shadow:0 0 0 1px rgba(22,119,255,.18);z-index:1}
+.item-card{padding:16px;border:1px solid var(--line);background:var(--surface);border-radius:17px;box-shadow:var(--shadow-sm)}.item-card header{display:flex;justify-content:space-between;gap:16px}.item-card h3{font-size:15px;margin:0}.item-card .when{font-size:10px;color:var(--muted);font-weight:900;white-space:nowrap}.item-card p{margin:7px 0 0;color:var(--muted);font-size:11px;line-height:1.65}.item-card ul{margin:8px 0 0;padding-left:17px;color:var(--muted);font-size:11px;line-height:1.65}
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+.panel{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-sm)}
+.panel h3{font-size:22px;letter-spacing:-.04em;margin:0 0 10px}.panel p{color:var(--muted);font-size:13px;line-height:1.72;margin:0}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:17px}.quick div{padding:12px;border-radius:14px;background:rgba(128,150,180,.07);border:1px solid var(--line)}.quick span{display:block;font-size:9px;color:var(--muted);font-weight:850}.quick strong{display:block;margin-top:4px;font-size:12px}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.skill{padding:13px;border:1px solid var(--line);background:var(--surface);border-radius:16px;transition:.2s}.skill:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}.skill-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.skill b{font-size:12px}.skill small{font-size:9px;color:var(--muted);font-weight:800}.skill p{font-size:10px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+
+.contact{padding-top:70px}.contact-card{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:28px;border-radius:25px;background:linear-gradient(135deg,#091735,#173d83 72%,#1677ff);color:#fff;box-shadow:0 28px 80px rgba(17,49,102,.24)}.contact-card .eyebrow{color:#ffd76a}.contact-card h2{font-size:clamp(32px,4.6vw,58px);letter-spacing:-.055em;line-height:1;margin:8px 0 10px}.contact-card p{margin:0;color:rgba(255,255,255,.72);font-size:13px;line-height:1.7;max-width:680px}.contact-links{display:grid;gap:9px;align-content:center}.contact-link{display:flex;align-items:center;gap:10px;padding:12px 13px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:900;transition:.2s}.contact-link:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+footer{padding:30px 0 55px;color:var(--muted);text-align:center;font-size:10px}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}.reveal.show{opacity:1;transform:none}
+.stagger > *{transition-delay:calc(var(--i,0) * 70ms)}
+
+.modal-backdrop{position:fixed;inset:0;z-index:1100;padding:16px;background:rgba(5,13,29,.58);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center}
+.modal-backdrop.open{display:flex}
+.modal{width:min(1100px,100%);max-height:92vh;overflow:hidden;border-radius:25px;background:var(--bg);border:1px solid var(--line);box-shadow:0 40px 120px rgba(0,0,0,.28);animation:modalIn .22s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--surface-strong) 92%,transparent);backdrop-filter:blur(12px)}.modal-head small{display:block;color:var(--primary);font-size:9px;letter-spacing:.12em;font-weight:950}.modal-head h3{margin:4px 0 0;font-size:19px;letter-spacing:-.03em}
+.modal-close{width:38px;height:38px;border:1px solid var(--line);background:var(--surface-strong);color:var(--ink);border-radius:12px;cursor:pointer;font-weight:950}
+.modal-body{padding:16px;overflow:auto}.modal-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.modal-intro p{color:var(--muted);font-size:11px;line-height:1.65;max-width:760px;margin:0}.modal-actions{display:flex;gap:8px;flex-wrap:wrap}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0}.tab{padding:7px 9px;border-radius:10px;background:var(--surface-strong);border:1px solid var(--line);color:var(--muted);font-size:9px;font-weight:900;cursor:pointer}.tab.active{color:var(--ink);box-shadow:var(--shadow-sm)}
+.sheet{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface-strong)}.sheet img{display:block;width:100%;max-height:61vh;object-fit:contain;background:#edf2f8}.sheet-caption{padding:10px 12px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);font-weight:900}
+.cert-view img{display:block;width:100%;max-height:75vh;object-fit:contain;background:#edf2f8;border-radius:14px}
+
+.backtop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:var(--surface-strong);color:var(--ink);box-shadow:var(--shadow-sm);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:700}.backtop.show{opacity:1;pointer-events:auto;transform:none}
+
+@media(max-width:1040px){
+ .navlinks a{padding:8px 10px}.hero{grid-template-columns:1fr;gap:34px}.hero-visual{max-width:600px;justify-content:flex-start}.photo-card{margin-left:0;max-width:600px;width:100%}.grid{grid-template-columns:repeat(2,1fr)}.certs{grid-template-columns:repeat(2,1fr)}.two-col,.contact-card{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ .container{width:calc(100% - 26px)}.nav-wrap{top:7px;padding-top:7px}.nav{height:58px;border-radius:18px}.brand small{display:none}.menu-btn{display:grid}.navlinks{position:absolute;left:0;right:0;top:66px;display:none;padding:7px;flex-direction:column;align-items:stretch;border-radius:16px;background:var(--surface-strong);box-shadow:var(--shadow)}.navlinks.open{display:flex}.navlinks a{text-align:center}.hero{min-height:auto;padding:58px 0 42px}.profile{height:auto;aspect-ratio:6/7}.photo-card{width:100%;max-width:100%}.hero h1{font-size:clamp(48px,15vw,72px)}.hero-lede{font-size:15px}.section{padding:76px 0}.section-head{display:block}.section-copy{margin-top:11px}.grid,.certs{grid-template-columns:1fr}.skill-grid,.quick{grid-template-columns:1fr}.floating-card{left:10px;bottom:22px}.mini-orbit{right:6px}.modal-intro{display:block}.modal-actions{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+
+/* =========================================================
+   INTERACTIVE RAINBOW EDGE + B&W PREVIEW EFFECTS
+   - Project / certificate images are grayscale by default.
+   - Hover reveals the original color and adds a lift/scale.
+   - A rainbow glass edge follows the pointer around the card.
+   ========================================================= */
+
+.card.project,
+.card.cert{
+  --edge-x:50%;
+  --edge-y:50%;
+  --edge-angle:0deg;
+  --edge-hue:220;
+  position:relative;
+  isolation:isolate;
+  transform-style:preserve-3d;
+  transition:
+    transform .42s cubic-bezier(.16,1,.3,1),
+    box-shadow .42s cubic-bezier(.16,1,.3,1),
+    border-color .28s ease;
+}
+
+/* Precise rainbow rim */
+.card.project::before,
+.card.cert::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:5;
+  pointer-events:none;
+  border-radius:inherit;
+  padding:1.6px;
+  background:
+    conic-gradient(
+      from var(--edge-angle),
+      #ff3b6a,
+      #ffb52e,
+      #fff35a,
+      #49f29a,
+      #31d8ff,
+      #6e7cff,
+      #bf5cff,
+      #ff4fd8,
+      #ff3b6a
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:0;
+  filter:drop-shadow(0 0 3px hsla(var(--edge-hue),100%,72%,.52));
+  transition:opacity .24s ease,filter .28s ease;
+}
+
+/* Soft colored bloom appears mainly on the side nearest the pointer */
+.card.project::after,
+.card.cert::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  z-index:4;
+  pointer-events:none;
+  border-radius:inherit;
+  padding:7px;
+  background:
+    radial-gradient(
+      180px 180px at var(--edge-x) var(--edge-y),
+      hsla(var(--edge-hue),100%,68%,.52),
+      hsla(calc(var(--edge-hue) + 45),100%,65%,.20) 28%,
+      transparent 68%
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  filter:blur(8px);
+  opacity:0;
+  transition:opacity .24s ease;
+}
+
+.card.project.edge-active::before,
+.card.cert.edge-active::before{
+  opacity:.96;
+  filter:drop-shadow(0 0 6px hsla(var(--edge-hue),100%,70%,.62));
+}
+
+.card.project.edge-active::after,
+.card.cert.edge-active::after{
+  opacity:.95;
+}
+
+.card.project.edge-active,
+.card.cert.edge-active{
+  transform:
+    perspective(1000px)
+    rotateX(var(--tilt-y,0deg))
+    rotateY(var(--tilt-x,0deg))
+    translateY(-8px)
+    scale(1.018);
+  border-color:rgba(255,255,255,.42);
+  box-shadow:
+    0 22px 50px rgba(19,35,62,.17),
+    0 0 26px hsla(var(--edge-hue),100%,67%,.14),
+    inset 0 1px 0 rgba(255,255,255,.72);
+}
+
+/* Depth inside the project/certificate card */
+.card.project .project-media,
+.card.cert .cert-thumb{
+  transform:translateZ(5px);
+}
+
+.card.project .project-body,
+.card.project .chips,
+.card.project .project-footer,
+.card.cert .cert-body{
+  transform:translateZ(10px);
+}
+
+/* Grayscale preview by default */
+.project-media img,
+.cert-thumb img,
+#sheetImage,
+#certImage{
+  filter:grayscale(1) saturate(0) contrast(1.035);
+  transition:
+    filter .5s cubic-bezier(.16,1,.3,1),
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .4s ease;
+}
+
+/* Reveal original color on pointer hover */
+.card.project.edge-active .project-media img,
+.card.cert.edge-active .cert-thumb img,
+#sheetImage:hover,
+#certImage:hover{
+  filter:grayscale(0) saturate(1.14) contrast(1.035);
+  transform:scale(1.055);
+}
+
+.card.project.edge-active .project-media img,
+.card.cert.edge-active .cert-thumb img{
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+}
+
+/* Slightly softer, more glass-like surface */
+.card.project.edge-active,
+.card.cert.edge-active{
+  backdrop-filter:blur(10px) saturate(125%);
+  -webkit-backdrop-filter:blur(10px) saturate(125%);
+}
+
+/* The preview itself can also react inside the modal */
+.sheet,
+.cert-view{
+  position:relative;
+  isolation:isolate;
+}
+
+.sheet::before,
+.cert-view::before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  pointer-events:none;
+  z-index:2;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  opacity:.45;
+}
+
+#sheetImage:hover,
+#certImage:hover{
+  box-shadow:0 16px 45px rgba(0,0,0,.16);
+}
+
+/* Make the edge effect feel like it travels along the glass */
+.card.project.edge-active::before,
+.card.cert.edge-active::before{
+  animation:rainbowTravel 2.8s linear infinite;
+}
+
+@keyframes rainbowTravel{
+  from{background-position:0 0}
+  to{background-position:100% 100%}
+}
+
+@media(max-width:760px){
+  /* On touch devices keep images clean; hover effects are desktop-only. */
+  .project-media img,
+  .cert-thumb img,
+  #sheetImage,
+  #certImage{
+    filter:none;
+  }
+}
+
+/* =========================================================
+   PORTFOLIO OPENING LOADER
+   Based on the Uiverse.io loader supplied by the user.
+   Scoped so it does not interfere with the rest of the site.
+   ========================================================= */
+.portfolio-loader{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,255,255,.88),transparent 38%),
+    #f6f9fc;
+  transition:opacity .65s ease, visibility .65s ease;
+}
+body.dark .portfolio-loader{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(25,42,74,.72),transparent 38%),
+    #07101f;
+}
+.portfolio-loader.is-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+body.loader-lock{
+  overflow:hidden;
+}
+.portfolio-loader .loader-core{
+  --col1:rgba(228, 19, 141, 0.925);
+  --col2:rgb(255, 179, 80);
+  font-size:2em;
+  font-weight:600;
+  perspective:800px;
+  position:relative;
+  display:inline-block;
+  line-height:1;
+}
+.portfolio-loader .loader-core::after,
+.portfolio-loader .loader-core::before,
+.portfolio-loader .text::after,
+.portfolio-loader .text::before{
+  perspective:800px;
+  animation:
+    portfolioAnim 2s ease-in-out infinite,
+    portfolioDotMove 10s ease-out alternate infinite,
+    portfolioMove 10s linear infinite 1s;
+  content:"●";
+  color:var(--col1);
+  position:absolute;
+  translate:-60px 500px;
+  width:5px;
+  height:5px;
+  pointer-events:none;
+}
+.portfolio-loader .loader-core::before{
+  animation-delay:3s;
+  color:var(--col1);
+}
+.portfolio-loader .text::before{
+  color:var(--col2);
+  animation-delay:2s;
+}
+.portfolio-loader .text::after{
+  color:var(--col2);
+}
+.portfolio-loader .text{
+  animation:
+    portfolioAnim 20s linear infinite,
+    portfolioMove 10s linear infinite 1s;
+  color:transparent;
+  background-image:linear-gradient(
+    90deg,
+    var(--col1) 0%,
+    var(--col2) 100%
+  );
+  background-clip:text;
+  -webkit-background-clip:text;
+  background-size:100%;
+  background-repeat:no-repeat;
+  transform:skew(5deg,-5deg);
+  position:relative;
+  white-space:nowrap;
+}
+@keyframes portfolioAnim{
+  0%,100%{
+    text-shadow:2px 0px 2px rgba(179,158,158,.5);
+  }
+  50%{
+    background-size:0%;
+    background-position-x:left;
+    text-shadow:2px 10px 6px rgba(179,158,158,1);
+  }
+}
+@keyframes portfolioMove{
+  50%{
+    translate:0px 0px;
+    rotate:x 60deg;
+    transform:skew(-5deg,5deg);
+  }
+}
+@keyframes portfolioDotMove{
+  0%,100%{
+    translate:-60px 300px;
+  }
+  50%{
+    translate:160px -250px;
+    scale:.5;
+    opacity:.85;
+  }
+}
+@media (max-width:600px){
+  .portfolio-loader .loader-core{
+    font-size:1.65em;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .portfolio-loader .loader-core,
+  .portfolio-loader .loader-core::after,
+  .portfolio-loader .loader-core::before,
+  .portfolio-loader .text::after,
+  .portfolio-loader .text::before{
+    animation:none!important;
+  }
+}
+
+</style>
+
+<style id="contact-link-accessibility">
+  .contact-link[aria-label]{ -webkit-tap-highlight-color: transparent; }
+</style>
+
+<style id="dark-project-eyebrow-black">
+/* Keep project eyebrow labels black in dark mode. */
+body.dark .project-top .badge {
+  color: #000 !important;
+}
+</style>
+</head>
+<body class="loader-lock">
+
+<!-- Portfolio opening loader -->
+<div class="portfolio-loader" id="portfolioLoader" aria-label="Loading portfolio">
+  <div class="loader-core" aria-hidden="true">
+    <span class="text">portofolio</span>
+  </div>
+</div>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
+<div class="bg"></div><div class="dotfield"></div>
+
+<header class="nav-wrap">
+  <div class="container">
+    <div class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Muhammad Irsad Khoiruddin home">
+        <span class="brand-mark">MIK</span>
+        <span>Muhammad Irsad Khoiruddin<small>Management • Accounting • Data</small></span>
+      </a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme" type="button" aria-label="Toggle theme">☼</button>
+        <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="container hero" id="home">
+  <div class="reveal show">
+    <div class="eyebrow"><span class="pulse-dot"></span>ACCOUNTING • FINANCE • EXCEL • DATA</div>
+    <h1>Muhammad Irsad Khoiruddin, <span class="gradient-text" id="rotatingRole">data useful.</span></h1>
+    <p class="hero-lede">Lulusan S1 Manajemen dengan pengalaman di bidang Quality Control, operasional produksi, serta industri makanan dan minuman. Memiliki kemampuan Microsoft Excel, Pivot Table, dashboard sederhana, pengolahan data dasar, serta pemahaman Financial Accounting & Reporting. Teliti, analitis, dan adaptif, dengan ketertarikan
+mengembangkan karier di bidang Accounting Cost, Finance, dan Data Analyst.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore portfolio ↘</a>
+      <a class="btn" href="assets/Muhammad-Irsad-Khoiruddin-CV.pdf" target="_blank" rel="noopener">View CV ↗</a>
+      <a class="btn ghost" href="#contact">Contact me</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>3.86/4.00</strong><span>GPA • S1 Management</span></div>
+      <div class="stat"><strong>5</strong><span>downloadable workbooks</span></div>
+      <div class="stat"><strong>9</strong><span>certificates in source set</span></div>
+    </div>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="photo-card" id="photoCard">
+      <img class="profile" src="assets/profile.webp" alt="Muhammad Irsad Khoiruddin wearing graduation attire in a bright university interior" width="1200" height="1500" fetchpriority="high">
+      <div class="floating-card">
+        <small>Current academic path</small>
+        <strong>S1 Management</strong>
+        <span>Human Resources concentration</span>
+      </div>
+      <div class="mini-orbit" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">SELECTED WORK</div><h2 class="section-title">Projects that show the work.</h2></div>
+      <p class="section-copy">Real workbook files from the uploaded portfolio set are available for direct download. The previews open in a lightweight modal so the page stays fast.</p>
+    </div>
+    <div class="filterbar reveal" id="filters" aria-label="Project filters">
+      <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="accounting">Accounting</button><button class="filter" data-filter="data">Data</button><button class="filter" data-filter="excel">Excel</button><button class="filter" data-filter="finance">Finance</button>
+    </div>
+    <div class="grid stagger" id="projectGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="certificates">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">CREDENTIALS</div><h2 class="section-title">Proof of learning, kept easy to scan.</h2></div>
+      <p class="section-copy">The cards use the original certificate pages from the uploaded PDF. Click a card for a larger preview and a direct link to the original PDF page.</p>
+    </div>
+    <div class="grid certs stagger" id="certGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">BACKGROUND</div><h2 class="section-title">Experience & education.</h2></div>
+      <p class="section-copy">The timeline keeps operational experience, academic work, and committee activity in one view.</p>
+    </div>
+    <div class="two-col">
+      <div class="timeline reveal">
+        <div class="item">
+          <span class="dot"></span>
+          <article class="item-card"><header><h3>Universitas Pelita Bangsa — S1 Manajemen</h3><span class="when">Sep 2022 — Sep 2022</span></header><p>IPK 3.86 / 4.00 • Konsentrasi Sumber Daya Manusia</p><ul><li>Mata kuliah relevan: Manajemen Operasional, Sistem Informasi Manajemen, Analitika Data, Statistika, Akuntansi Biaya, Manajemen Risiko Bisnis.</li></ul></article>
+        </div>
+        <div class="item">
+          <span class="dot"></span>
+          <article class="item-card"><header><h3>PT Nippon Metal Work Industri — QC & Packing Operator (Internship)</h3><span class="when">Feb 2021 — Apr 2021</span></header><p>Inspeksi kualitas lebih dari 1.000 pcs fastener otomotif per hari, identifikasi NG/reject, marking, dan packing hingga 4 pallet produksi (±27 box container).</p></article>
+        </div>
+        <div class="item">
+          <span class="dot"></span>
+          <article class="item-card"><header><h3>Ara's Coffee — Steward & Helper</h3><span class="when">Jan 2025 — Mar 2025</span></header><p>Mendukung persiapan bahan, pengolahan menu, penyajian, dan kebersihan operasional. Berkontribusi pada kelancaran outlet yang selama periode kerja mencatat peningkatan revenue dari Rp37 juta menjadi Rp41 juta (±11%).</p></article>
+        </div>
+        <div class="item">
+          <span class="dot"></span>
+          <article class="item-card"><header><h3>Panitia Seminar Akademik — Universitas Pelita Bangsa</h3><span class="when">2023 — 2024</span></header><p>Berpartisipasi dalam 4 kegiatan seminar akademik pada divisi Publikasi, Dokumentasi, Dekorasi (PDD), dan Perlengkapan, termasuk membuat pamflet serta sertifikat peserta.</p></article>
+        </div>
+      </div>
+      <aside class="panel reveal">
+        <h3>Focused professional snapshot</h3>
+        <p>Interested in roles around Warehouse Administration, Logistics, Accounting Cost, Finance, and Data Analyst. Strengths documented in the CV include accuracy, analytical thinking, teamwork, time management, and adaptability.</p>
+        <div class="quick">
+          <div><span>Location</span><strong>Serang Baru, Kab. Bekasi</strong></div>
+          <div><span>Concentration</span><strong>Human Resources</strong></div>
+          <div><span>Core tools</span><strong>Excel • SPSS • SmartPLS • Canva</strong></div>
+          <div><span>Work style</span><strong>Structured & detail-oriented</strong></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">CAPABILITIES</div><h2 class="section-title">Tools & working capabilities.</h2></div>
+      <p class="section-copy">Skill labels and descriptions below are grounded in the uploaded CV and workbook set; no percentage ratings are invented.</p>
+    </div>
+    <div class="skill-grid stagger">
+      <article class="skill reveal"><div class="skill-top"><b>Microsoft Excel</b><small>Intermediate</small></div><p>Formula, Lookup, PivotTable, dashboard and practical reporting workflows.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Financial Accounting</b><small>Practice</small></div><p>Accounting cycle, journal entry, financial reporting, adjustments and closing.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Data Analysis</b><small>Applied</small></div><p>PivotTable, basic analysis, data summaries and dashboard-oriented presentation.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>SPSS & SmartPLS</b><small>Statistical</small></div><p>Statistical analysis tools listed in the CV.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Microsoft Office</b><small>Core toolset</small></div><p>Excel, Word and PowerPoint for office and reporting needs.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Quality Control</b><small>Operational</small></div><p>Product inspection, specification checks, NG/reject identification and accuracy.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Production & Packing</b><small>Operational</small></div><p>Quantity checks, weighing, packaging condition and production readiness.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Canva</b><small>Visual content</small></div><p>Design and visual content creation for supporting materials.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Analytical Thinking</b><small>Soft skill</small></div><p>Problem solving, attention to detail and accuracy.</p></article>
+      <article class="skill reveal"><div class="skill-top"><b>Teamwork & Adaptability</b><small>Soft skill</small></div><p>Collaboration, time management and adaptability in operational settings.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div>
+        <div class="eyebrow">LET'S CONNECT</div>
+        <h2>Useful work starts with a clear brief.</h2>
+        <p>Open to conversations around accounting, finance, Excel, data analysis, warehouse administration, logistics, and operational work.</p>
+        <div style="margin-top:16px"><a class="btn" style="background:#fff;color:#0b1739;border-color:#fff" href="assets/Muhammad-Irsad-Khoiruddin-CV.pdf" target="_blank" rel="noopener">Open CV ↗</a></div>
+      </div>
+      <div class="contact-links">
+        <!-- Gmail: opens a pre-filled Gmail compose window -->
+        <a class="contact-link"
+           href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=muhammadirsadkhoiruddin304%40gmail.com&amp;su=Career%20Opportunity%20%E2%80%93%20Muhammad%20Irsad%20Khoiruddin&amp;body=Dear%20Muhammad%20Irsad%20Khoiruddin%2C%0A%0AMy%20name%20is%20%5BHR%20Name%5D%20from%20%5BCompany%20Name%5D.%20We%20came%20across%20your%20portfolio%20and%20are%20interested%20in%20discussing%20a%20potential%20career%20opportunity%20with%20you.%0A%0AWe%20would%20be%20happy%20to%20share%20further%20information%20regarding%20the%20position%20and%20discuss%20the%20next%20steps%20with%20you.%0A%0ABest%20regards%2C%0A%5BHR%20Name%5D%0A%5BCompany%20Name%5D"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Email Muhammad Irsad Khoiruddin via Gmail">
+          ✉ <span>Email me ↗</span>
+        </a>
+
+        <!-- WhatsApp: opens a chat with a professional pre-filled message -->
+        <a class="contact-link"
+           href="https://wa.me/6285216417085?text=Halo%20Muhammad%20Irsad%2C%20saya%20%5BNama%5D%20dari%20%5BPerusahaan%5D.%20Saya%20tertarik%20dengan%20profil%20Anda%20dan%20ingin%20berdiskusi%20mengenai%20peluang%20kerja.%20Apakah%20Anda%20bersedia%20untuk%20berdiskusi%20lebih%20lanjut%3F"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contact Muhammad Irsad Khoiruddin via WhatsApp">
+          ☏ <span>WhatsApp ↗</span>
+        </a>
+
+        <a class="contact-link"
+           href="https://www.linkedin.com/in/muhammad-irsad-khoiruddin/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open Muhammad Irsad Khoiruddin LinkedIn profile">
+          in <span>LinkedIn profile ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">© 2026 Muhammad Irsad Khoiruddin • Built as a lightweight, dependency-free portfolio.</div></footer>
+
+<button class="backtop" id="backtop" type="button" aria-label="Back to top">↑</button>
+
+<div class="modal-backdrop" id="projectModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head"><div><small id="modalEyebrow">PROJECT</small><h3 id="modalTitle">Project</h3></div><button class="modal-close" id="closeProject" type="button" aria-label="Close project preview">×</button></div>
+    <div class="modal-body">
+      <div class="modal-intro"><p id="modalDescription"></p><div class="modal-actions" id="modalActions"></div></div>
+      <div class="tabs" id="sheetTabs"></div>
+      <div class="sheet"><img id="sheetImage" alt="" loading="eager"><div class="sheet-caption" id="sheetCaption"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="certModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="certTitle">
+    <div class="modal-head"><div><small id="certEyebrow">CERTIFICATE</small><h3 id="certTitle">Certificate</h3></div><button class="modal-close" id="closeCert" type="button" aria-label="Close certificate preview">×</button></div>
+    <div class="modal-body cert-view">
+      <div class="modal-actions" style="margin-bottom:12px"><a class="btn" id="certPdf" target="_blank" rel="noopener">Open original PDF page ↗</a></div>
+      <img id="certImage" alt="" loading="eager">
+    </div>
+  </div>
+</div>
+
+<script>
+const PROJECTS = [{"id":"dagang","title":"Trading Company Accounting Workbook","category":"accounting","eyebrow":"FLAGSHIP • ACCOUNTING SYSTEM","summary":"Workbook terintegrasi untuk siklus akuntansi perusahaan dagang, dari jurnal dan buku besar sampai laporan keuangan, rekonsiliasi, persediaan, payroll, dan CALK.","metrics":["28 sheets","12 key flow sheets","80-transaction practice"],"chips":["Jurnal umum","Buku besar","Financial statements","AP / AR","Inventory","Bank reconciliation"],"workbook":"assets/workbooks/Trading-Company-Accounting-80-Transactions.xlsx","gallery":[{"label":"Dashboard","src":"assets/projects/dagang/01-dashboard.webp"},{"label":"Jurnal Umum","src":"assets/projects/dagang/02-jurnal-umum.webp"},{"label":"Buku Besar","src":"assets/projects/dagang/03-buku-besar.webp"},{"label":"Neraca Saldo","src":"assets/projects/dagang/04-neraca-saldo.webp"},{"label":"Jurnal Penyesuaian","src":"assets/projects/dagang/05-jurnal-penyesuaian.webp"},{"label":"Neraca Setelah Penyesuaian","src":"assets/projects/dagang/06-neraca-setelah-penyesuaian.webp"},{"label":"Laba Rugi","src":"assets/projects/dagang/07-laba-rugi.webp"},{"label":"Perubahan Ekuitas","src":"assets/projects/dagang/08-perubahan-ekuitas.webp"},{"label":"Posisi Keuangan","src":"assets/projects/dagang/09-posisi-keuangan.webp"},{"label":"Arus Kas","src":"assets/projects/dagang/10-arus-kas.webp"},{"label":"CALK","src":"assets/projects/dagang/11-calk.webp"},{"label":"Kartu Persediaan","src":"assets/projects/dagang/12-kartu-persediaan.webp"}],"color":"navy"},{"id":"simple","title":"Simple Accounting","category":"accounting","eyebrow":"FINANCIAL ACCOUNTING","summary":"Latihan akuntansi sederhana dengan saldo awal, transaksi, jurnal, dan laporan utama yang dibuat mudah ditelusuri.","metrics":["4 sheets","10 transactions","Financial reports"],"chips":["Saldo awal","Jurnal","Laba rugi","Posisi keuangan"],"workbook":"assets/workbooks/Simple-Accounting.xlsx","gallery":[{"label":"Laporan Laba Rugi","src":"assets/projects/simple/01-laporan-laba-rugi.webp"},{"label":"Laporan Posisi Keuangan","src":"assets/projects/simple/02-laporan-posisi-keuangan.webp"}],"color":"blue"},{"id":"practice50","title":"50-Question Accounting","category":"accounting","eyebrow":"ACCOUNTING PRACTICE","summary":"Workbook latihan transaksi dengan daftar akun terstruktur, jurnal umum, buku besar, penyesuaian, penutupan, dan laporan keuangan otomatis.","metrics":["50 transactions","64 accounts","Connected reports"],"chips":["50 soal","64 akun","Jurnal","Penyesuaian","Laporan keuangan"],"workbook":"assets/workbooks/50-Question-Accounting.xlsx","gallery":[{"label":"Jurnal Umum","src":"assets/projects/practice50/01-jurnal-umum.webp"},{"label":"Laporan Keuangan","src":"assets/projects/practice50/02-laporan-keuangan.webp"}],"color":"green"},{"id":"payroll","title":"Payroll & PPh21","category":"finance","eyebrow":"PAYROLL WORKFLOW • PREVIEW","summary":"Konsep workbook payroll terstruktur untuk master karyawan, payroll bulanan, slip gaji, jurnal payroll, dan modul PPh21. Preview ini berasal dari versi portofolio sebelumnya.","metrics":["Master karyawan","Payroll bulanan","PPh21 module"],"chips":["Payroll","Slip gaji","PPh21","Journal workflow"],"workbook":null,"gallery":[{"label":"Payroll Bulanan","src":"assets/projects/payroll/01-payroll-bulanan.webp"},{"label":"Slip Gaji","src":"assets/projects/payroll/02-slip-gaji.webp"}],"color":"orange"},{"id":"pivot","title":"Sales PivotTable Dashboard","category":"data","eyebrow":"DATA ANALYTICS","summary":"Dataset transaksi 300 baris diolah menjadi PivotTable, KPI, dan dashboard penjualan dengan fokus omzet, profit, qty, produk, dan metode pembayaran.","metrics":["300 rows","Rp21.76M omzet","49.5% profit margin"],"chips":["PivotTable","KPI","Dashboard","Product analysis","Payment method"],"workbook":"assets/workbooks/Sales-PivotTable-Dashboard.xlsx","gallery":[{"label":"Sales Dashboard","src":"assets/projects/pivot/01-sales-dashboard.webp"},{"label":"Data Penjualan","src":"assets/projects/pivot/02-data-penjualan.webp"}],"color":"cyan","data_note":"Dashboard source: 300 transaction rows, total omzet Rp21.758.000, total profit Rp10.775.500, 1.346 qty."},{"id":"rumus","title":"Excel Formula Library","category":"excel","eyebrow":"MICROSOFT EXCEL","summary":"Workbook latihan rumus dari dasar sampai kombinasi dunia kerja: lookup, logika, tanggal, ranking, dynamic arrays, analisis lanjutan, dan formula praktis kantor.","metrics":["11 modules","Lookup → dynamic","Work-ready formulas"],"chips":["Lookup","IF / Logic","Date & workday","Dynamic array","SUMPRODUCT"],"workbook":"assets/workbooks/Excel-Formula-Library.xlsx","gallery":[{"label":"Workbook Summary","src":"assets/projects/rumus/01-workbook-summary.webp"},{"label":"Lookup Practice","src":"assets/projects/rumus/02-lookup-practice.webp"}],"color":"rose"}];
+const CERTS = [{"title":"Accounting Fundamental","date":"September 2026","page":1,"thumb":"assets/certificates/01-accounting-fundamental.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=1"},{"title":"Introduction to Product Management","date":"September 2026","page":2,"thumb":"assets/certificates/02-introduction-to-product-management.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=2"},{"title":"Data Analysis Fundamental","date":"September 2026","page":3,"thumb":"assets/certificates/03-data-analysis-fundamental.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=3"},{"title":"Index Match, VLOOKUP & HLOOKUP","date":"August 2026","page":4,"thumb":"assets/certificates/04-index-match-vlookup-hlookup.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=4"},{"title":"Seminar Manajemen Perubahan","date":"June 2024","page":5,"thumb":"assets/certificates/05-seminar-manajemen-perubahan.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=5"},{"title":"Seminar Statistik","date":"June 2024","page":6,"thumb":"assets/certificates/06-seminar-statistik.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=6"},{"title":"Seminar Strategi Industri Fashion","date":"2024","page":7,"thumb":"assets/certificates/07-seminar-strategi-industri-fashion.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=7"},{"title":"TQM Webinar","date":"December 2024","page":8,"thumb":"assets/certificates/08-tqm-webinar.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=8"},{"title":"MSMEs Training / Pelatihan UMKM","date":"October 2025","page":9,"thumb":"assets/certificates/09-msmes-training-pelatihan-umkm.webp","pdf":"assets/Muhammad-Irsad-Khoiruddin-Certificates.pdf#page=9"}];
+
+const $ = (s, r=document)=>r.querySelector(s);
+const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
+
+const projectGrid = $('#projectGrid');
+const certGrid = $('#certGrid');
+const projectModal = $('#projectModal');
+const certModal = $('#certModal');
+let lastFocus = null;
+
+function esc(s){ return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+function renderProjects(filter='all'){
+  projectGrid.innerHTML = PROJECTS.filter(p=>filter==='all'||p.category===filter).map((p,i)=>{
+    const first=p.gallery[0];
+    return `<article class="card project reveal" data-color="${esc(p.color)}" data-project="${esc(p.id)}" style="--i:${i}">
+      <div class="project-media">
+        <img src="${esc(first.src)}" alt="${esc(p.title)} preview" loading="lazy" decoding="async">
+        <div class="project-top"><span class="badge">${esc(p.eyebrow)}</span><button class="project-open" type="button" data-project="${esc(p.id)}" aria-label="Open ${esc(p.title)} preview">↗</button></div>
+      </div>
+      <div class="project-body"><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>
+        <div class="metric-row">${p.metrics.map(m=>`<span class="metric">${esc(m)}</span>`).join('')}</div>
+      </div>
+      <div class="chips">${p.chips.map(c=>`<span class="chip">${esc(c)}</span>`).join('')}</div>
+      <div class="project-footer">
+        <button class="link-btn" type="button" data-project="${esc(p.id)}">View sheets ↗</button>
+        ${p.workbook?`<a class="link-btn muted" href="${esc(p.workbook)}" download>Download workbook ↓</a>`:`<span class="link-btn muted">Preview only</span>`}
+      </div>
+    </article>`;
+  }).join('');
+  attachProjectReveal();
+}
+function attachProjectReveal(){
+  $$('.reveal', projectGrid).forEach(el=>observer.observe(el));
+}
+function renderCerts(){
+  certGrid.innerHTML = CERTS.map((c,i)=>`<article class="card cert reveal" data-cert="${c.page}" style="--i:${i}" tabindex="0" role="button" aria-label="View ${esc(c.title)} certificate">
+    <div class="cert-thumb"><img src="${esc(c.thumb)}" alt="${esc(c.title)} certificate thumbnail" loading="lazy" decoding="async"></div>
+    <div class="cert-body"><div class="cert-date">${esc(c.date)}</div><h3>${esc(c.title)}</h3></div>
+  </article>`).join('');
+  $$('.cert').forEach(el=>observer.observe(el));
+}
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); observer.unobserve(e.target); }});
+},{threshold:.12});
+renderProjects();
+renderCerts();
+$$('.reveal').forEach(el=>observer.observe(el));
+
+$('#filters').addEventListener('click',e=>{
+  const b=e.target.closest('.filter'); if(!b)return;
+  $$('.filter').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+  renderProjects(b.dataset.filter);
+});
+
+function openProject(id){
+  const p=PROJECTS.find(x=>x.id===id); if(!p)return;
+  lastFocus=document.activeElement;
+  $('#modalEyebrow').textContent=p.eyebrow;
+  $('#modalTitle').textContent=p.title;
+  $('#modalDescription').textContent=p.summary;
+  $('#modalActions').innerHTML=(p.workbook?`<a class="btn" href="${esc(p.workbook)}" download>Download workbook ↓</a>`:'')+`<span class="btn" style="cursor:default">${esc(p.metrics.join(' • '))}</span>`;
+  const tabs=$('#sheetTabs');
+  tabs.innerHTML=p.gallery.map((g,i)=>`<button class="tab ${i===0?'active':''}" type="button" data-index="${i}">${esc(g.label)}</button>`).join('');
+  const setSheet=(i)=>{
+    const g=p.gallery[i]; $('#sheetImage').src=g.src; $('#sheetImage').alt=p.title+' — '+g.label; $('#sheetCaption').textContent=g.label;
+    $$('.tab',tabs).forEach((t,j)=>t.classList.toggle('active',j===i));
+  };
+  tabs.onclick=e=>{const t=e.target.closest('.tab');if(t)setSheet(Number(t.dataset.index));};
+  setSheet(0);
+  projectModal.classList.add('open'); projectModal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); $('#closeProject').focus();
+}
+function closeModal(el){
+  el.classList.remove('open'); el.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); if(lastFocus)lastFocus.focus();
+}
+projectGrid.addEventListener('click',e=>{const b=e.target.closest('[data-project]'); if(b)openProject(b.dataset.project);});
+$('#closeProject').onclick=()=>closeModal(projectModal);
+projectModal.addEventListener('click',e=>{if(e.target===projectModal)closeModal(projectModal);});
+
+function openCert(page){
+  const c=CERTS.find(x=>Number(x.page)===Number(page)); if(!c)return;
+  lastFocus=document.activeElement; $('#certTitle').textContent=c.title; $('#certImage').src=c.thumb; $('#certImage').alt=c.title+' certificate'; $('#certPdf').href=c.pdf;
+  certModal.classList.add('open'); certModal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); $('#closeCert').focus();
+}
+certGrid.addEventListener('click',e=>{const el=e.target.closest('[data-cert]');if(el)openCert(el.dataset.cert);});
+certGrid.addEventListener('keydown',e=>{const el=e.target.closest('[data-cert]');if(el&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openCert(el.dataset.cert);}});
+$('#closeCert').onclick=()=>closeModal(certModal);
+certModal.addEventListener('click',e=>{if(e.target===certModal)closeModal(certModal);});
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(projectModal.classList.contains('open'))closeModal(projectModal);if(certModal.classList.contains('open'))closeModal(certModal);}});
+$$('.navlinks a').forEach(a=>a.addEventListener('click',()=>$('#navlinks').classList.remove('open')));
+$('#menu').onclick=()=>{const n=$('#navlinks');const open=n.classList.toggle('open');$('#menu').setAttribute('aria-expanded',open?'true':'false');};
+
+function safeStorageGet(key){try{return localStorage.getItem(key)}catch(e){return null}}
+function safeStorageSet(key,value){try{localStorage.setItem(key,value)}catch(e){}}
+$('#theme').onclick=()=>{
+  const dark=document.body.classList.toggle('dark'); safeStorageSet('portfolio-theme',dark?'dark':'light'); $('#theme').textContent=dark?'☾':'☼';
+};
+if(safeStorageGet('portfolio-theme')==='dark'){document.body.classList.add('dark');$('#theme').textContent='☾';}
+
+const sections=['projects','certificates','experience','skills','contact'];
+const navLinks=sections.map(id=>({id,a:$(`.navlinks a[href="#${id}"]`)}));
+const sectionObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(x=>x.a.classList.toggle('active',x.id===e.target.id));}});
+},{rootMargin:'-30% 0px -55% 0px',threshold:0});
+sections.forEach(id=>sectionObs.observe(document.getElementById(id)));
+
+function updateScroll(){
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  $('#progress').style.width=(h>0?(scrollY/h)*100:0)+'%';
+  $('#backtop').classList.toggle('show',scrollY>700);
+}
+addEventListener('scroll',updateScroll,{passive:true}); updateScroll();
+$('#backtop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+const roles=['data useful.','reports clearer.','workbooks practical.','analysis structured.'];
+let ri=0; setInterval(()=>{ri=(ri+1)%roles.length; const el=$('#rotatingRole');el.style.opacity='0';setTimeout(()=>{el.textContent=roles[ri];el.style.opacity='1'},180)},2600);
+
+const photo=$('#photoCard');
+if(matchMedia('(pointer:fine)').matches){
+  photo.addEventListener('pointermove',e=>{
+    const r=photo.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    photo.style.transform=`perspective(900px) rotateX(${y*-4}deg) rotateY(${x*5}deg) translateY(-2px)`;
+  });
+  photo.addEventListener('pointerleave',()=>photo.style.transform='');
+}
+
+
+/* =========================================================
+   POINTER-TRACKED RAINBOW EDGE EFFECT
+   Event delegation keeps it working after project filters
+   re-render the project cards.
+   ========================================================= */
+(function initRainbowGlassCards(){
+  const roots=[document.getElementById('projectGrid'),document.getElementById('certGrid')].filter(Boolean);
+  if(!roots.length) return;
+
+  const state=new WeakMap();
+
+  function cardFromEvent(e){
+    return e.target.closest && e.target.closest('.card.project, .card.cert');
+  }
+
+  roots.forEach(root=>{
+    root.addEventListener('pointerover', e=>{
+      const card=cardFromEvent(e);
+      if(!card || !root.contains(card)) return;
+      const from=e.relatedTarget;
+      if(from && card.contains(from)) return;
+
+      card.classList.add('edge-active');
+      state.set(card,{x:e.clientX,y:e.clientY});
+      update(card,e.clientX,e.clientY);
+    });
+
+    root.addEventListener('pointermove', e=>{
+      const card=cardFromEvent(e);
+      if(!card || !root.contains(card)) return;
+      state.set(card,{x:e.clientX,y:e.clientY});
+      update(card,e.clientX,e.clientY);
+    });
+
+    root.addEventListener('pointerout', e=>{
+      const card=cardFromEvent(e);
+      if(!card || !root.contains(card)) return;
+      const to=e.relatedTarget;
+      if(to && card.contains(to)) return;
+
+      card.classList.remove('edge-active');
+      card.style.removeProperty('--tilt-x');
+      card.style.removeProperty('--tilt-y');
+      card.style.setProperty('--edge-x','50%');
+      card.style.setProperty('--edge-y','50%');
+    });
+
+    root.addEventListener('focusin', e=>{
+      const card=e.target.closest && e.target.closest('.card.project, .card.cert');
+      if(card) card.classList.add('edge-active');
+    });
+
+    root.addEventListener('focusout', e=>{
+      const card=e.target.closest && e.target.closest('.card.project, .card.cert');
+      if(card && !card.contains(e.relatedTarget)) card.classList.remove('edge-active');
+    });
+  });
+
+  function update(card,clientX,clientY){
+    const r=card.getBoundingClientRect();
+    const x=Math.max(0,Math.min(100,((clientX-r.left)/r.width)*100));
+    const y=Math.max(0,Math.min(100,((clientY-r.top)/r.height)*100));
+
+    // Rainbow position follows the pointer around the perimeter.
+    const dx=x-50;
+    const dy=y-50;
+    const angle=(Math.atan2(dy,dx)*180/Math.PI)+90;
+    const hue=(190 + x*.9 + (100-y)*.55)%360;
+
+    card.style.setProperty('--edge-x',x.toFixed(2)+'%');
+    card.style.setProperty('--edge-y',y.toFixed(2)+'%');
+    card.style.setProperty('--edge-angle',angle.toFixed(2)+'deg');
+    card.style.setProperty('--edge-hue',hue.toFixed(1));
+
+    // Tiny physical tilt: enough to feel raised, never enough to jump around.
+    const tiltX=((x-50)/50)*2.4;
+    const tiltY=-((y-50)/50)*2.2;
+    card.style.setProperty('--tilt-x',tiltX.toFixed(2)+'deg');
+    card.style.setProperty('--tilt-y',tiltY.toFixed(2)+'deg');
+  }
+})();
+
+/* =========================================================
+   PORTFOLIO OPENING LOADER
+   Shows on every fresh page load / refresh, then fades out
+   after the page resources are ready. A short minimum time
+   keeps the animation visible even with a warm browser cache.
+   ========================================================= */
+(function initPortfolioLoader(){
+  const loader = document.getElementById('portfolioLoader');
+  if(!loader) return;
+
+  const start = performance.now();
+  const minimumTime = 1400;
+
+  function hideLoader(){
+    const elapsed = performance.now() - start;
+    const wait = Math.max(0, minimumTime - elapsed);
+
+    setTimeout(() => {
+      loader.classList.add('is-hidden');
+      document.body.classList.remove('loader-lock');
+
+      setTimeout(() => {
+        loader.remove();
+      }, 700);
+    }, wait);
+  }
+
+  if(document.readyState === 'complete'){
+    hideLoader();
+  }else{
+    window.addEventListener('load', hideLoader, {once:true});
+  }
+})();
+
+</script>
+</body>
+</html>
